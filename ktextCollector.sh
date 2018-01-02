@@ -5,8 +5,9 @@
 #google form
 #see https://eureka.ykyuen.info/2014/07/30/submit-google-forms-by-curl-command/ to set these values
 formID="yourGoogle_FormID_Here"
-field1="entry.google_form_field_nameID"
-field2="entry.google_form_field_nameID2"
+field1="entry.google_form_field_nameID_1"
+field2="entry.google_form_field_nameID_2"
+field3="entry.google_form_field_nameID_3"
 
 #create a google form
 #add two text fields
@@ -32,9 +33,9 @@ then
         bundid[$loopCounter]=$( defaults read /Library/Extensions/"${kext[$loopCounter]}"/Contents/Info.plist CFBundleIdentifier )
 
 		#troubleshooting echo
-        #echo "Team ID: ${teamid[$loopCounter]} Bundle ID: ${bundid[$loopCounter]}"
+        #echo "ktext: ${kext[$loopCounter]} Team ID: ${teamid[$loopCounter]} Bundle ID: ${bundid[$loopCounter]}"
         
-        curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq -d $field1=${teamid[$loopCounter]} -d $field2=${bundid[$loopCounter]} -d submit=Submit > /dev/null
+        curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq -d $field1=${teamid[$loopCounter]} -d $field2=${bundid[$loopCounter]} -d $field3=${kext[$loopCounter]} -d submit=Submit > /dev/null
     done
 fi
 
