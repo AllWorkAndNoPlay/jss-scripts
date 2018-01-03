@@ -35,6 +35,8 @@ then
 		#troubleshooting echo
         #echo "ktext: ${kext[$loopCounter]} Team ID: ${teamid[$loopCounter]} Bundle ID: ${bundid[$loopCounter]}"
         
+        #curl to submit result to google form
+        # silent and /dev/nul to suppress results of curl in log
         curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq -d $field1=${teamid[$loopCounter]} -d $field2=${bundid[$loopCounter]} -d $field3=${kext[$loopCounter]} -d submit=Submit > /dev/null
     done
 fi
