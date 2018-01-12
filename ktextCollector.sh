@@ -42,7 +42,7 @@ echo "Bundle ID: ${bundid}"
 
 # curl to submit result to google form
 # silent and /dev/nul to suppress results of curl in log
-curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq -d "$field1=${teamid}" -d "$field2=${teamid}" -d "$field3=${line}" -d submit=Submit > /dev/null
+curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq -d "$field1=${teamid}" -d "$field2=${bundid}" -d "$field3=${line}" -d submit=Submit > /dev/null
 done
 
 exit
