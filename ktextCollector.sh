@@ -21,29 +21,28 @@ field3="entry.google_form_field_nameID_3"
 # use find to scan ktext
 find / \( -type d -name "System" -prune \) -o \( -type d -name "private" -prune \) -o \( -type d -name "StagedExtensions" -prune \) -o \( -type d -name "dev" -prune \) -o \( -name "*.kext" -type d -print \) | while read line; do
 
-# Line Break
-echo " "
+    # Line Break
+    echo " "
 
-# BackSlash for spaces
-thePath=$(echo ${line} | awk '{gsub(/ /,"\\ ");print}')
+    # BackSlash for spaces
+    thePath=$(echo ${line} | awk '{gsub(/ /,"\\ ");print}')
 
-# Get the team ID for the kext
-teamid[$loopCounter]=$( codesign -d -vvvv ${thePath} 2>&1 | grep "Authority=Developer ID Application:" | cut -d"(" -f2 | tr -d ")" )
+    # Get the team ID for the kext
+    teamid[$loopCounter]=$( codesign -d -vvvv ${thePath} 2>&1 | grep "Authority=Developer ID Application:" | cut -d"(" -f2 | tr -d ")" )
 
-# Get the CFBundleIdentifier for the kext
-bundid[$loopCounter]=$( defaults read ${thePath}/Contents/Info.plist CFBundleIdentifier )
+    # Get the CFBundleIdentifier for the kext
+    bundid[$loopCounter]=$( defaults read ${thePath}/Contents/Info.plist CFBundleIdentifier )
 
-# troubleshooting echo
-echo " "
-echo "Line: ${line}"
-echo "Path: ${thePath}"
-echo "Team ID: ${teamid}"
-echo "Bundle ID: ${bundid}"
+    # troubleshooting echo
+    echo " "
+    echo "Line: ${line}"
+    echo "Path: ${thePath}"
+    echo "Team ID: ${teamid}"
+    echo "Bundle ID: ${bundid}"
 
-# curl to submit result to google form
-# silent and /dev/nul to suppress results of curl in log
-curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq -d "$field1=${teamid}" -d "$field2=${bundid}" -d "$field3=${line}" -d submit=Submit > /dev/null
+    # curl to submit result to google form
+    # silent and /dev/nul to suppress results of curl in log
+    curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq -d "$field1=${teamid}" -d "$field2=${bundid}" -d "$field3=${line}" -d submit=Submit > /dev/null
 done
 
 exit
-
