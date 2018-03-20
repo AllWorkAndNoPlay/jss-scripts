@@ -32,6 +32,7 @@ done
 # /usr/sbin/networksetup -listallnetworkservices does not return interfaces of type IKIEv2
 # the default service name for a IKIEv2 interface is VPN (IKEv2). So the first delete will work if the VPN name is not changed.
 
+# Loops through the list of ifconfig interfaces that are type utun, and deletes those interfaces.
 for service in $(ifconfig | grep -e "utun" ); do
     ifconfig "${service}" delete
 done
