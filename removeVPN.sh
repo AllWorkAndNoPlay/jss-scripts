@@ -33,7 +33,7 @@ done
 # the default service name for a IKIEv2 interface is VPN (IKEv2). So the first delete will work if the VPN name is not changed.
 
 # Loops through the list of ifconfig interfaces that are type utun, and deletes those interfaces.
-for service in $(ifconfig | grep -e "utun" ); do
+for service in $( ifconfig | grep "utun" | cut -f 1 -d ":" | grep '^u' ); do
     ifconfig "${service}" delete
 done
 
