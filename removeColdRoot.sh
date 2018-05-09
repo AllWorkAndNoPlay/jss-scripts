@@ -7,6 +7,9 @@
 #unload launchDaemon
 launchctl unload /Library/LaunchDaemons/com.apple.audio.driver.plist
 
+#close application
+killall com.apple.audio.driver.plist
+
 #delete the launchDaemon plist
 rm /Library/LaunchDaemons/com.apple.audio.driver.plist
 
