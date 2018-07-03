@@ -1,0 +1,14 @@
+#!/bin/bash
+
+#run VectorWorks installer app silent from command line using local drive
+#Assumes installer app is on local drive
+/Users/Shared/.VectorWorks/Vectorworks 2018 Installer.app/Contents/MacOS/Vectorworks\ 2018\ Installer --unattendedmodeui none --mode unattended --Serial SERIAL_NUMBER_HERE --UserName USER_NAME_HERE --CompName COMPANY_NAME_HERE --installdir /Applications/Vectorworks\ 2018
+
+# Fix VectorWorks permissions installation
+chown -R root:wheel /Applications/Vectorworks\ 2018
+
+# Make Libraries folder writable - the app makes changes as each user...
+chmod 777 /Applications/Vectorworks\ 2017/Libraries
+
+#remove installer
+rm -Rf /Users/Shared/.VectorWorks
