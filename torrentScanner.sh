@@ -8,7 +8,8 @@
 formID="google_DocumentID"
 field1="entry.fieldID"
 field2="entry.fieldID2"
-field3="entry.fieldID2"
+field3="entry.fieldID3"
+field4="entry.fieldID4"
 
 #create a google form
 #add two text fields
@@ -63,10 +64,15 @@ then
 		fileName[$loop]=$( basename ${paths[$loop]} )
 		
 		#print fileName
-		echo "Path: ${fileName[$loop]}"
-	
+		echo "FileName: ${fileName[$loop]}"
 		
-		curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq --data-urlencode $field1="${computerName}" --data-urlencode $field2="${fileName[$loop]}" --data-urlencode $field3="${aPath[$loop]}" -d submit=Submit > /dev/null
+		#st ownerOfFile
+		ownerOfFile[$loop]=$( ls -l ${paths[$loop]} | awk '{print $3}' )
+		
+		#print ownerOfFile
+		echo "Path: ${ownerOfFile[$loop]}"
+		
+		curl --silent https://docs.google.com/forms/d/$formID/formResponse -d ifq --data-urlencode $field1="${computerName}" --data-urlencode $field2="${ownerOfFile[$loop]}" --data-urlencode $field3="${fileName[$loop]}" --data-urlencode $field4="${aPath[$loop]}" -d submit=Submit > /dev/null
 	
 	done
 fi
