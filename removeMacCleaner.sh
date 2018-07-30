@@ -2,6 +2,16 @@
 
 #based off of FastGM3's script
 
+
+#unload LaunchAgents
+launchctl unload /Library/LaunchAgents/Adwarecleaner
+launchctl unload /Library/LaunchAgents/hlpradc
+launchctl unload /Library/LaunchAgents/hlpramc
+launchctl unload /Library/LaunchAgents/hlprawc
+launchctl unload /Library/LaunchAgents/com.adscleaner.hlpradc.plist
+launchctl unload /Library/LaunchAgents/com.pcv.hlpramcn.plist
+
+
 #remove apps
 rm -Rf /Applications/Advanced\ Mac\ Cleaner.app
 rm -Rf /Applications/Mac\ Ads\ Cleaner.app
