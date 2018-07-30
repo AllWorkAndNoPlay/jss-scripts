@@ -75,13 +75,13 @@ rm -f /Users/*/Library/Cookies/com.techyutils.Mac-Ads-Cleaner.binarycookies
 
 
 #removes from users Library Applications Support Folder
-rm -R /Users/*/Library/Applications\ Support/Mac\ Ads\ Cleaner
-rm -R /Users/*/Library/Applications\ Support/Mac\ Adware\ Cleaner
-rm -R /Users/*/Library/Applications\ Support/Mac\ File\ Opner
-rm -R /Users/*/Library/Applications\ Support/Advanced\ Mac\ Cleaner
-rm -R /Users/*/Library/Applications\ Support/awc
-rm -R /Users/*/Library/Applications\ Support/amc
-rm -R /Users/*/Library/Applications\ Support/adc
+rm -Rf /Users/*/Library/Applications\ Support/Mac\ Ads\ Cleaner
+rm -Rf /Users/*/Library/Applications\ Support/Mac\ Adware\ Cleaner
+rm -Rf /Users/*/Library/Applications\ Support/Mac\ File\ Opner
+rm -Rf /Users/*/Library/Applications\ Support/Advanced\ Mac\ Cleaner
+rm -Rf /Users/*/Library/Applications\ Support/awc
+rm -Rf /Users/*/Library/Applications\ Support/amc
+rm -Rf /Users/*/Library/Applications\ Support/adc
 
 
 
