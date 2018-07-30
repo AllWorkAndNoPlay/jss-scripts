@@ -5,11 +5,11 @@
 
 #unload LaunchAgents
 launchctl unload /Library/LaunchAgents/Adwarecleaner
-launchctl unload /Library/LaunchAgents/hlpradc
-launchctl unload /Library/LaunchAgents/hlpramc
-launchctl unload /Library/LaunchAgents/hlprawc
-launchctl unload /Library/LaunchAgents/com.adscleaner.hlpradc.plist
+launchctl unload /Library/LaunchAgents/com.pcv.hlpradc.plist
+launchctl unload /Library/LaunchAgents/com.pcv.hlpramc.plist
+launchctl unload /Library/LaunchAgents/com.pcv.hlpramc.plist
 launchctl unload /Library/LaunchAgents/com.pcv.hlpramcn.plist
+launchctl unload /Library/LaunchAgents/com.adscleaner.hlpradc.plist
 
 
 #remove apps
@@ -23,18 +23,17 @@ rm -Rf /Applications/_MACOSX/Mac\ Adware\ Cleaner.app
 
 #remove LaunchAgents
 rm -f /Library/LaunchAgents/Adwarecleaner
-rm -f /Library/LaunchAgents/hlpradc
-rm -f /Library/LaunchAgents/hlpramc
-rm -f /Library/LaunchAgents/hlprawc
+rm -f /Library/LaunchAgents/*hlpradc*
+rm -f /Library/LaunchAgents/*hlpramc*
+rm -f /Library/LaunchAgents/*hlprawc*
 rm -f /Library/LaunchAgents/com.adscleaner.hlpradc.plist
-rm -f /Library/LaunchAgents/com.pcv.hlpramcn.plist
 
 
 #remove User LaunchAgents
 rm -f /Users/*/Library/LaunchAgents/Adwarecleaner
-rm -f /Users/*/Library/LaunchAgents/hlpradc
-rm -f /Users/*/Library/LaunchAgents/hlpramc
-rm -f /Users/*/Library/LaunchAgents/hlprawc
+rm -f /Users/*/Library/LaunchAgents/*hlpradc*
+rm -f /Users/*/Library/LaunchAgents/*hlpramc*
+rm -f /Users/*/Library/LaunchAgents/*hlprawc*
 rm -f /Users/*/Library/LaunchAgents/com.adscleaner.hlpradc.plist
 rm -f /Users/*/Library/LaunchAgents/com.adwarecleaner.hlprawc.plist
 rm -f /Users/*/Library/LaunchAgents/com.pcv.hlpramcn.plist
@@ -59,9 +58,9 @@ rm -Rf /Users/*/Library/Mac\ Ads\ Cleaner
 rm -Rf /Users/*/Library/AdvancedMacCleaner
 rm -Rf /Users/*/Library/MacAdwareCleaner
 rm -Rf /Users/*/Library/MacAdsCleaner
-rm -Rf /Users/*/Library/hlpradc
-rm -Rf /Users/*/Library/hlpramc
-rm -Rf /Users/*/Library/hlprawc
+rm -Rf /Users/*/Library/*hlpradc*
+rm -Rf /Users/*/Library/*hlpramc*
+rm -Rf /Users/*/Library/*hlprawc*
 
 
 #removes from users Library Caches Folder
