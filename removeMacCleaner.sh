@@ -77,7 +77,7 @@ rm -R /Users/*/Library/Applications\ Support/adc
 
 
 #removes from users Library Preferences Folder
-rm -f /Users/*/Library/Preferences/Mac Adware Cleaner
+rm -f /Users/*/Library/Preferences/Mac\ Adware\ Cleaner
 rm -f /Users/*/Library/Preferences/Adware
 rm -f /Users/*/Library/Preferences/Adwarecleaner
 rm -f /Users/*/Library/Preferences/pcvark
