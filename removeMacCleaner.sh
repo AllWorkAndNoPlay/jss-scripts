@@ -84,7 +84,6 @@ rm -Rf /Users/*/Library/Applications\ Support/amc
 rm -Rf /Users/*/Library/Applications\ Support/adc
 
 
-
 #removes from users Library Preferences Folder
 rm -f /Users/*/Library/Preferences/Mac\ Adware\ Cleaner
 rm -f /Users/*/Library/Preferences/Adware
